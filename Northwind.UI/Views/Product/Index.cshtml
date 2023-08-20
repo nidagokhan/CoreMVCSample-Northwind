@@ -1,0 +1,38 @@
+﻿
+@using Northwind.UI.DatabaseApp.Entities
+@model List<Product>
+@{ 
+    ViewData["Title"] = "id";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ProductID</th>
+            <th>ProductName</th>
+            <th>SupplierID</th>
+            <th>CategoryID</th>
+            <th>UnitPrice</th>
+            <th>UnitsInStock</th>
+            <th>UnitsOnOrder</th>
+            <th>Edit</th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductID</td>
+                <td>@item.ProductName</td>
+                <td>@item.SupplierID</td>
+                <td>@item.CategoryID</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.UnitsInStock</td>
+                <td>@item.UnitsOnOrder</td>
+                <td>
+                    <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.ProductID" class="btn btn-outline-info">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

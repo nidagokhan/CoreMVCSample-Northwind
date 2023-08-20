@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using  Northwind.UI.DatabaseApp.Entities
+@model List<Category>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>CategoryID</th>
+            <th>CategoryName</th>
+            <th>Description</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+            <td>@item.Description</td>
+            <td>
+                <a asp-controller="Category" asp-action="Edit" asp-route-id="@item.CategoryID" class="btn btn-outline-info">Edit</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+

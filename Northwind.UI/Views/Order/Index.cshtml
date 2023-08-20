@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using  Northwind.UI.DatabaseApp.Entities
+@model List<Order>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>OrderID</th>
+            <th>CustomerID</th>
+            <th>EmployeeID</th>
+            <th>OrderDate</th>
+            <th>RequiredDate</th>
+            <th>ShippedDate</th>
+            <th>Freight</th>
+            <th>ShipName</th>
+            <th>ShipAddress</th>
+            <th>ShipCity</th>
+            <th>ShipRegion</th>
+            <th>ShipPostalCode</th>
+            <th>ShipCountry</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.OrderID</td>
+            <td>@item.CustomerID</td>
+            <td>@item.EmployeeID</td>
+            <td>@item.OrderDate</td>
+            <td>@item.RequiredDate</td>
+            <td>@item.ShippedDate</td>
+            <td>@item.Freight</td>
+            <td>@item.ShipName</td>
+            <td>@item.ShipAddress</td>
+            <td>@item.ShipCity</td>
+            <td>@item.ShipRegion</td>
+            <td>@item.ShipPostalCode</td>
+            <td>@item.ShipCountry</td>
+            <td>
+                <a asp-controller="Order" asp-action="Edit" asp-route-id="@item.OrderID" class="btn btn-outline-info">Edit</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using  Northwind.UI.DatabaseApp.Entities
+@model List<Supplier>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>SupplierID</th>
+            <th>CompanyName</th>
+            <th>ContactName</th>
+            <th>ContactTitle</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Region</th>
+            <th>PostalCode</th>
+            <th>Country</th>
+            <th>Phone</th>
+            <th>Fax</th>
+            <th>HomePage</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.SupplierID</td>
+            <td>@item.CompanyName</td>
+            <td>@item.ContactName</td>
+            <td>@item.ContactTitle</td>
+            <td>@item.Address</td>
+            <td>@item.City</td>
+            <td>@item.Region</td>
+            <td>@item.PostalCode</td>
+            <td>@item.Country</td>
+            <td>@item.Phone</td>
+            <td>@item.Fax</td>
+            <td>@item.HomePage</td>
+            <td>
+                <a asp-controller="Supplier" asp-action="Edit" asp-route-id="@item.SupplierID" class="btn btn-outline-info">Edit</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
